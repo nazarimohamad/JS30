@@ -39,5 +39,3 @@ button {
   transform: scale(1.1);
   box-shadow: 0 0 2px 3px darkgoldenrod;
 }
-
-<div class="key"data-key="65"><kbd>A</kbd><span class="sound">clap</span></div>

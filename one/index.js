@@ -17,10 +17,3 @@ document.addEventListener("DOMContentLoaded", function() {
   const allKey = document.querySelectorAll('.key');
   allKey.forEach(key => key.addEventListener('transitionend', removeTransion))
 });
-
-// const allKey = document.querySelectorAll('.key')
-// allKey.forEach(key => key.addEventListener('transionend', removeTransion))
-
-// const removeTransion = (e) => {
-//   console.log(e)
-// }

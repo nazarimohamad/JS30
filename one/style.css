@@ -1,0 +1,43 @@
+section {
+  width: 100%;
+  height: 100vh;
+  background-color: darkcyan;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.key {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+  /* box-shadow: none; */
+  transition: all 0.07s;
+}
+
+.sound {
+  color: darkgoldenrod;
+  text-transform: uppercase;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.isPlaying {
+  transform: scale(1.1);
+  box-shadow: 0 0 2px 3px darkgoldenrod;
+}
+
+<div class="key"data-key="65"><kbd>A</kbd><span class="sound">clap</span></div>

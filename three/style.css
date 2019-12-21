@@ -1,0 +1,24 @@
+:root {
+  --base: #3554ff;
+  --spacing: 10px;
+  --blur: 2px;
+}
+
+
+body {
+  text-align: center;
+}
+
+.controls {
+  margin-top: 50px;
+}
+
+img {
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+}
+
+span {
+  color: var(--base);
+}

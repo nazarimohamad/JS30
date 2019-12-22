@@ -17,10 +17,10 @@
     <input type="range" name="spacing" min="0" max="200" value="10" data-sizing="px">
 
     <label for="blur">Blur:</label>
-    <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+    <input type="range" name="blur" min="0" max="10" value="2" data-sizing="px">
 
     <label for="base">Base:</label>
-    <input type="color" name="base" value="#ffc500">
+    <input type="color" name="base" value="#3554ff">
   </div>
   <img src="https://picsum.photos/id/538/500/400">
 
@@ -29,7 +29,6 @@
     const inputs = document.querySelectorAll('.controls input')
 
     function updateCSS() {
-      console.log(this.value)
       const suffix = this.dataset.sizing || '';
       document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
     }

@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url('./pizza.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.wrapper {
+  width: 35%;
+  background-color: white;
+  padding: 3%;
+}
+
+.plates input {
+  display: none;
+}
+
+.plates input+label:before {
+  content: '◻️';
+  margin-right: 10px;
+}
+
+.plates input:checked+label:before {
+  content: '🍕';
+  /* content: '🍟'; */
+}
+
+.plates-lists {
+  display: flex;
+  list-style: none;
+  margin: 0.8rem 0;
+  padding: 3px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.plates-lists:nth-child(1) {
+  margin: 2rem 0 1rem 0;
+}
+
+.plates-lists p {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin: 0 5px;
+}
+
+
+.add-items {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.add-items :nth-child(1) {
+  width: 70%;
+  height: 30px;
+}
+
+.add-items :nth-child(2) {
+  height: 30px;
+  font-size: 1rem;
+  padding: 0 3px;
+  margin: 0 2px;
+  background-color: lightblue;
+}

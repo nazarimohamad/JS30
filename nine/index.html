@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nav link and Drop down</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./index.js" async></script>
+</head>
+
+<body>
+  <nav class="top">
+    <div class="dropdownBackground">
+      <span class="arrow"></span>
+    </div>
+    <ul class="cool">
+      <li>
+        <a href="#">About me</a>
+        <div class="dropdown dropdown1">
+          <div class="bio">
+            <img src="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+              architecto nihil sunt magnam explicabo maxime tempore possim</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">Courses</a>
+        <ul class="dropdown courses">
+          <li>
+            <span class="code">ES6</span>
+            <a class="button" href="">ES6 For Everyone</a>
+          </li>
+          <li>
+            <span class="code">ES6</span>
+            <a class="button" href="">ES6 For Everyone</a>
+          </li>
+          <li>
+            <span class="button" class="code">STPU</span>
+            <a href="">VS Code power user</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">RFB</a>
+        <ul class="dropdown dropdown3">
+          <li>
+            <span class="code">ES6</span>
+            <a class="button" href="">ES6 For Everyone</a>
+          </li>
+          <li>
+            <span class="button" class="code">STPU</span>
+            <a href="">VS Code power user</a>
+          </li>
+          <li>
+            <span class="button" class="code">WTF</span>
+            <a href="">React for beginners</a>
+          </li>
+          <li>
+            <span class="button" class="code">Flex</span>
+            <a href="">What The flexbox?</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+
+
+  <script>
+    const triggers = document.querySelectorAll('.cool > li');
+    const background = document.querySelector('.dropdownBackground');
+    const nav = document.querySelector('.top');
+
+    function hanldeEnter() {
+
+      this.classList.add('trigger-enter');
+
+      setTimeout(() => {
+        if (this.classList.contains('trigger-enter')) {
+          this.classList.add('trigger-enter-active')
+        }
+      }, 150);
+
+      background.classList.add('open');
+
+      const dropdown = this.querySelector('.dropdown');
+      const dropdownCords = dropdown.getBoundingClientRect();
+      const navCords = nav.getBoundingClientRect();
+
+      const cords = {
+        height: dropdownCords.height,
+        width: dropdownCords.width,
+        top: dropdownCords.top - navCords.top,
+        left: dropdownCords.left - navCords.left,
+      };
+      console.log(cords.height);
+      background.style.setProperty('width', `${cords.width}px`);
+      background.style.setProperty('height', `${cords.height}px`);
+      background.style.setProperty('transform', `translate(${cords.left}px, ${cords.top}px)`);
+    }
+
+    function hanldeLeave() {
+      this.classList.remove('trigger-enter', 'trigger-enter-active');
+      background.classList.remove('open');
+    }
+
+    triggers.forEach(trigger => trigger.addEventListener('mouseenter', hanldeEnter));
+    triggers.forEach(trigger => trigger.addEventListener('mouseleave', hanldeLeave))
+  </script>
+
+</body>
+
+</html>
